@@ -1,0 +1,430 @@
+@import url('https://fonts.googleapis.com/css2?family=Bokor&family=Faculty+Glyphic&family=Geist+Mono:wght@100..900&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Noto+Sans+JP:wght@100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+::-webkit-scrollbar{
+    width: 10px;
+}
+
+::-webkit-scrollbar-thumb{
+    background-color: var(--FONT_MAIN_COLOR_DARK);      /*tonyás --> ide írom majd amit változtattam: */
+    border-radius: 25px;                                /*                                            */
+}                                                       /*                                            */      
+                                                        /*                                            */
+::-webkit-scrollbar-track{
+    
+}
+
+:root{
+    --BG_COLOR_DARK: rgb(0,0,0);
+    --FORE_COLOR_DARK: rgb(37, 34, 34);
+    --FONT_COLOR_DARK: white;
+    --FONT_MAIN_COLOR_DARK: rgb(245, 197, 24);
+}
+
+*{
+    box-sizing: border-box;
+}
+
+input, .fejlec span, a{
+    cursor: url(img/TMBDcursor_pointer.png), auto;
+}
+
+
+body{
+    margin: 0;
+    background-color: var(--BG_COLOR_DARK);
+    color: var(--FONT_COLOR_DARK);
+    font-family: "Faculty Glyphic", sans-serif;
+    cursor: url(img/TMBDcursor.png), auto;
+    overflow-x: hidden;
+    
+}
+
+.frame{
+    margin-inline: 15vw;
+}
+
+h1{
+    text-transform: uppercase;
+    color: var(--FONT_MAIN_COLOR_DARK);
+    text-align: center;
+}
+
+.fejlec{
+    display: flex;
+    position: fixed;
+    top: 0;
+    z-index: 1;
+    justify-content: center;
+    gap: 50px;
+    align-items: center;
+    width: 100%;
+    height: 60px;
+    background-color: var(--FORE_COLOR_DARK);
+}
+
+.logo{
+    display: flex;
+    gap: 0px;
+    top: 0;
+    z-index: 1;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+    
+}
+
+.fejlec img{
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+    
+}
+.fejlec p{
+    font-family: "Faculty Glyphic", sans-serif;
+    color: rgb(245, 197, 24);;
+    font-size: 40px;
+    margin: 1px;
+    font-weight: 900;
+}
+
+.fejlec input[type=search]{
+    color: var(--BG_COLOR_DARK);
+    outline: none;
+    padding-block: 5px;
+    padding-left: 15px;
+    padding-right: 0;
+    font-size: 1.4em;
+    width: 360px;
+    border-radius: 5px;
+    font-family: "Faculty Glyphic", sans-serif;
+    transition: width 1s;
+}
+
+.fejlec input[type=search]:focus{
+    outline: 2px solid var(--FONT_MAIN_COLOR_DARK);
+    width: 400px;
+}
+
+.fejlec span{
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.fejlec a{
+    text-decoration: none;
+    color: white;
+}
+
+.slider { 
+    position: relative; 
+    max-width: 1000px; 
+    margin: auto; 
+    overflow: hidden; 
+    border: 2px solid #ddd;
+} 
+
+.slides {
+    display: flex; 
+    transition: transform 0.5s ease-in-out;
+}
+
+.slides img { 
+    width: 100%;
+    height: auto;
+    object-fit: fill;
+    display: block;
+    flex-shrink: 0; 
+}
+
+.navigation { 
+    position: absolute; 
+    width: 100%; 
+    display: flex; 
+    justify-content: space-between; 
+    top: 50%; 
+    transform: translateY(-50%); 
+}
+
+.navigation.nep{
+    position: absolute;
+    top: 0;
+    background-color: rgb(245, 197, 24);
+    transform: perspective(1000px)
+                rotateZ(90deg);
+}
+
+.navigation a { 
+    background: rgba(0, 0, 0, 0.5); 
+    color: white; 
+    padding: 10px; 
+    text-decoration: none; 
+    font-size: 18px;
+    transition: transform 0.7s, padding-left 0.7s, color 0.7s; 
+    display: inline-block;
+}
+
+.navigation a:nth-child(even){
+    transition: transform 0.7s, padding-right 0.7s, color 1s;
+}
+
+.navigation a:hover{
+    transform: perspective(1000px) translateZ(200px);
+    color: var(--FONT_MAIN_COLOR_DARK);
+}
+
+.navigation a:nth-child(odd):hover {
+    padding-left: 50px;
+}
+
+
+.navigation a:nth-child(even):hover{
+    padding-right: 50px;
+}
+
+.nepszeru{
+    display: grid;
+    gap: 10px;
+    grid-template-columns: 50% 50%;
+    position: absolute;
+    max-width: 400px;
+    max-height: 600px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    padding: 15px;
+}
+
+.nepszeru::-webkit-scrollbar{
+    display: none;
+}
+
+.nepszeru.left{
+    left: 30px;
+    top: 145px;
+}
+
+.nepszeru.right{
+    right: 30px;
+    top: 145px;
+}
+
+.nepszeru div{
+    position: relative;
+    width: 150px;
+    transition: box-shadow 0.8s, transform 0.5s, margin 0.5s;
+}
+
+.nepszeru div:hover{
+    box-shadow: inset #bb1d2591 0px 0px 50px 1px;
+    transform: perspective(1000px) translateZ(100px); 
+    border-radius: 15px;
+}
+
+.nepszeru div:has(~ div:hover), .nepszeru div:hover ~ div {
+    margin: 25px 10px 0px 0px;
+}
+
+.nepszeru div img{
+    width: 100%;
+    aspect-ratio: 9/13;
+    border-radius: 15px;
+}
+
+.nepszeru div p{
+    text-align: center;
+    color: var(--FONT_COLOR_DARK);
+}
+
+.nepszeru div .konyvjelzo{
+    position: absolute;
+    top: 0;
+    left: 8px;
+    background-color: rgba(0, 0, 0, 0.2);
+    transition: transform 0.4s, background-color 0.4s, fill 0.4s;
+}
+
+.nepszeru div .konyvjelzo:hover{
+    background-color: none;
+    fill: rgba(0,0,0,0.7);
+    transform: perspective(1000px)
+                translate3d(0px, 3.5px, 200px);
+}
+
+.hot.left{
+    position: absolute;
+    left: 85px;
+    top: 45px;
+}
+
+.hot::after{
+    position: absolute;
+    content: " ";
+    top: 40px;
+    left: -45px;
+    width: 335px;
+    border-top: 2px #E50914 solid;
+    filter: blur(1px);
+    box-shadow: 0px 23px 50px 10px #E50914;
+}
+
+.hot.right{
+    position: absolute;
+    right: 100px;
+    top: 45px;
+}
+
+.actors{
+    display: flex;
+    width: 100%;
+    height: 300px;
+    justify-content: space-between;
+}
+
+.actors div{
+    align-content: center;
+    width: 200px;
+    height: auto;
+}
+
+.actors img{
+    width: 100%;
+    object-fit: cover;
+    object-position: 0% 30%;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    border-top: 3px ridge var(--FONT_MAIN_COLOR_DARK);
+}
+
+.actors div p{
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin: 0;
+}
+
+.actors div p:nth-child(even){
+    font-size: 2em;
+    color: var(--FONT_MAIN_COLOR_DARK);
+}
+
+.actors div p:nth-child(odd){
+    letter-spacing: 0.6px;
+    font-size: 1.4em;
+    color: var(--FONT_COLOR_DARK);
+}
+
+.lablec {
+    position: relative;
+    height: 80vh;
+    overflow: hidden;
+    padding-bottom: 5%;
+    background-color: rgb(37, 34, 34);;
+    margin-top: 2vh;
+}
+.lablec_video{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 100%;
+    min-height: 100%;
+    max-width: 100%;
+    width: auto;
+    height: auto;
+    z-index: 0; 
+    overflow: hidden;
+}
+.lablec::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        rgb(0, 0, 0) 10%, 
+        rgba(29, 27, 27, 0) 100% 
+    );
+    z-index: 1;
+    pointer-events: none; 
+}
+
+.tartalom {
+    position: absolute; 
+    top: 0;
+    left: 0;
+    width: 100%; 
+    height: 100%; 
+    display: flex; 
+    justify-content: end;
+    align-items: center;
+    flex-direction: column; 
+    z-index: 2; 
+    color: white;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    
+}
+
+.tartalom p {
+    margin: 0; 
+    padding: 10px;
+}
+.kozosegi-media {
+    display: flex;
+    justify-content: center;
+    gap: 15px; 
+}
+
+
+.icon {
+    color: white;
+    font-size: 1.5rem; 
+    text-decoration: none; 
+    transition: color 0.3s; 
+}
+
+.icon:hover {
+    color: rgb(245, 197, 24);
+}
+
+@media screen and (max-width: 1620px) {
+    .slider{
+        max-width: 900px;
+        margin-inline: 10vw;
+    }
+
+    .nepszeru{
+        grid-template-columns: 100%;
+    }
+
+    .nepszeru.left{
+        left: 50px;
+    }
+
+    .nepszeru.right{
+        right: 50px;
+    }
+
+    .nepszeru::before{
+        width: 150px;
+    }
+
+    .nepszeru::after{
+        width: 150px;
+    }
+
+    .hot.left{
+        left: 10px;
+    }
+
+    .hot.right{
+        right: 10px;
+    }
+
+    .actors{
+        margin-top: 150px;
+    }
+
+    .actors div:last-child{
+        display: none;
+    }
+}
